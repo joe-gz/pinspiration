@@ -1,4 +1,5 @@
 class Pin < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
   belongs_to :user
 
   has_many :tags

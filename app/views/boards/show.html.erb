@@ -2,7 +2,7 @@
 <ul>
   <% @board.tags.each do |tag|%>
   <li><%= tag.pin.title %></li>
-  <li><%= image_tag(tag.pin.photo_url)%></li>
+  <li><%= image_tag(tag.pin.image)%></li>
   <%= link_to "Delete Pin From Board", user_board_tag_path(current_user,@board,tag), method: :delete%>
   <%end%>
 </ul>

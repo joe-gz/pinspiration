@@ -35,7 +35,7 @@ before_action :set_pin, only: [:show,:edit,:update,:destroy]
   private
 
   def pin_params
-    params.require(:pin).permit(:title,:photo_url)
+    params.require(:pin).permit(:title,:image)
   end
 
   def set_pin
