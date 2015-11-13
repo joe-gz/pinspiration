@@ -1,0 +1,23 @@
+<h1>Hello World</h1>
+
+<% if current_user%>
+<%= link_to "New Pin", new_pin_path %>
+<%= link_to "My Boards", user_boards_path(current_user) %>
+<% end%>
+
+<ul>
+  <% @pins.each do |pin| %>
+  <li>
+    <%= pin.title %>
+  </li>
+
+  <li>
+    <%=link_to image_tag(pin.photo_url), pin_path(pin)%>
+  </li>
+
+  <li>
+    <%= link_to "Edit Pin", edit_pin_path(pin)%>
+  </li>
+
+  <% end%>
+</ul>

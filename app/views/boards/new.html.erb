@@ -1,0 +1,7 @@
+<h2>New Board</h2>
+
+<%= form_for [current_user, @board] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<%end%>

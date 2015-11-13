@@ -1,0 +1,8 @@
+<h2>My Boards</h2>
+
+<%= link_to "New Board", new_user_board_path%>
+
+
+<%@boards.each do |board| %>
+<%= link_to board.title, user_board_path(current_user,board) %>
+<%end %>

@@ -1,0 +1,22 @@
+<ul>
+  <li>
+    <%= @pin.title %>
+  </li>
+
+  <li>
+    <%= image_tag(@pin.photo_url)%>
+  </li>
+
+  <li>
+    <%= link_to "Edit Pin", edit_pin_path(@pin)%>
+    <%= link_to "Delete Pin", pin_path(@pin), method: :delete%>
+
+    <%= form_for [current_user] do |f| %>
+      <%= f.select( "board[]","title")  %>
+
+      <%= f.submit %>
+    <%end%>
+
+  </li>
+
+</ul>

@@ -1,0 +1,6 @@
+<%= @board.title %>
+
+<% @board.tags.each do |tag|%>
+<%= tag.pin.title %>
+<%= tag.pin.photo_url %>
+<%end%>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "pins#index"
 
   resources :pins
-
+  resources :users do
+    resources :boards
+  end
 
 end
