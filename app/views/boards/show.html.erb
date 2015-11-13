@@ -3,6 +3,6 @@
   <% @board.tags.each do |tag|%>
   <li><%= tag.pin.title %></li>
   <li><%= image_tag(tag.pin.photo_url)%></li>
-  <%= link_to "Delete Pin From Board", pin_tag_path(tag.pin,tag), method: :delete%>
+  <%= link_to "Delete Pin From Board", user_board_tag_path(current_user,@board,tag), method: :delete%>
   <%end%>
 </ul>

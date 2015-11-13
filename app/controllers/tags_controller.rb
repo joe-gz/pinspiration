@@ -27,9 +27,10 @@ class TagsController < ApplicationController
 
   def destroy
     @tag = Tag.find(params[:id])
-    @pin = Pin.find(params[:pin_id])
+
+    @board = Board.find(params[:board_id])
     @tag.destroy
-    redirect_to pin_path(@pin)
+    redirect_to user_board_path(current_user,@board)
   end
 
 end
