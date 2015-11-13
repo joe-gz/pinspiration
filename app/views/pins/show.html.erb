@@ -11,11 +11,15 @@
     <%= link_to "Edit Pin", edit_pin_path(@pin)%>
     <%= link_to "Delete Pin", pin_path(@pin), method: :delete%>
 
-    <%= form_for [current_user] do |f| %>
-      <%= f.select( "board[]","title")  %>
-
-      <%= f.submit %>
+    <%= form_for [@pin,@tag] do |f| %>
+    <select name="board">
+         <%= @boards.each do |board|  %>
+         <option value="<%= board.title %>"><%= board.title %></option>
+         <%end%>
+       </select>
+    <%= f.submit %>
     <%end%>
+
 
   </li>
 

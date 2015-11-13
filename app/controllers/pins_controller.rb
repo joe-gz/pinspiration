@@ -7,6 +7,7 @@ before_action :set_pin, only: [:show,:edit,:update,:destroy]
 
   def show
     @tag = Tag.new
+    @boards = Board.all
   end
 
   def new

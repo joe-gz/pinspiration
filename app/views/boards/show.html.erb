@@ -1,6 +1,8 @@
 <%= @board.title %>
+<ul>
+  <% @board.tags.each do |tag|%>
+  <li><%= tag.pin.title %></li>
+  <li><%= image_tag(tag.pin.photo_url)%></li>
 
-<% @board.tags.each do |tag|%>
-<%= tag.pin.title %>
-<%= tag.pin.photo_url %>
-<%end%>
+  <%end%>
+</ul>
