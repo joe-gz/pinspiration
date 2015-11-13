@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :tags
   end
   resources :users do
-    resources :boards
+    resources :boards do
+      resources :tags
+    end
   end
 
 end

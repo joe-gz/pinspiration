@@ -23,7 +23,13 @@ class TagsController < ApplicationController
   end
 
   def update
+  end
 
+  def destroy
+    @tag = Tag.find(params[:id])
+    @pin = Pin.find(params[:pin_id])
+    @tag.destroy
+    redirect_to pin_path(@pin)
   end
 
 end
